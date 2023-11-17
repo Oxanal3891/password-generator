@@ -1,3 +1,15 @@
+alert('Thank you for choosing our random password generator service!\nFor your security, we recomment that you choose a password which:\n1) is minimum 8 characters long,\n2) consists of a mixture of lower and case characters, and numbers, \n3) includes special characters.\nChoose your password parameters>>')
+
+var passwordLength = prompt('How long do you want your password to be? Enter a number between 8 and 128.');
+
+while (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) { passwordLength = prompt('Invalid entry. Enter a nubmer between 8 and 128.') };
+
+console.log(passwordLength)
+
+
+
+
+
 // Array of special characters to be included in password
 var specialCharacters = [
   '@',
