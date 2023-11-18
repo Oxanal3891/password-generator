@@ -2,9 +2,45 @@ alert('Thank you for choosing our random password generator service!\nFor your s
 
 var passwordLength = prompt('How long do you want your password to be? Enter a number between 8 and 128.');
 
-while (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) { passwordLength = prompt('Invalid entry. Enter a nubmer between 8 and 128.') };
+while (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) { passwordLength = prompt('Invalid entry. Enter a number between 8 and 128.') };
 
 console.log(passwordLength)
+
+var characters = [lowerCase, upperCase, numericCharacters, specialCharacters]
+
+  /
+while (!characters.includes(true)) {
+  var lowerCase = confirm("Do you want to include lower case characters?")
+  var upperCase = confirm("Do you want to include upper case characters?")
+  var numericCharacters = confirm("Do you want to include numeric characters?")
+  var specialCharacters = confirm("Do you want to include special characters?")
+};
+
+
+/*
+for (; ;) {
+  var characters = [lowerCase, upperCase, numericCharacters, specialCharacters];
+  var lowerCase = confirm("Do you want to include lower case characters?");
+  var upperCase = confirm("Do you want to include upper case characters?");
+  var numericCharacters = confirm("Do you want to include numeric characters?");
+  var specialCharacters = confirm("Do you want to include special characters?");
+  if (!characters.includes(true)) {
+
+    alert('Select at least 1 type of characters'),
+    lowerCase = confirm("Do you want to include lower case characters?")
+  }
+  else if (lowerCase) { upperCase = confirm("Do you want to include upper case characters?") }
+  else if 
+{ numericCharacters = confirm("Do you want to include numeric characters?") }
+else if 
+  specialCharacters = confirm("Do you want to include special characters?")
+
+
+    ;
+} else if () { } else {
+  valid = true;
+}
+}
 
 
 
@@ -128,3 +164,5 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
+
+* /
