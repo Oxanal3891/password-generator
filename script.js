@@ -159,15 +159,28 @@ let getPasswordOptions = function () {
     ];
 
   }
+
+  else { alert("Please type in a valid length"); }
 }
 
 
-/*
+
 // Function to generate password with user input
-function generatePassword() {
+let generatePassword = function () {
+
+  //randomly shuffle randomly chosen characters
+  for (let i = characters.length - 1; i > 0; i--) {
+    const newIndex = Math.floor(Math.random() * (i + 1));
+    const randomIndex = characters[i];
+    characters[i] = characters[swapIndex];
+    characters[newIndex] = randomIndex;
+  };
+
+
+
 
 }
-*/
+
 
 //Function for getting a random element from an array
 
