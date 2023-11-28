@@ -14,7 +14,16 @@ const prompts = [
   "Do you want to include numeric characters?",
   "Do you want to include special characters?"
 ];
+//Declare a character options object by joining various character arrays ()
 
+const charOptions = {
+  specialChar: "@%+\/'!#$^?:,)(}{][~-_.",
+  lowerCasedChar:
+}
+
+//Declare password choices 
+
+let passwordChoices = "";
 
 //Password length prompt and validation
 
@@ -26,7 +35,12 @@ while (true) {
 
 
 
-//Special character validation
+//Characters prompts and validation
+
+let specialCharChoice = prompt(prompt[1]);
+if (specialCharChoice) { }
+
+
 
 /*
 var char = [];
@@ -135,13 +149,11 @@ var specialCharacters = [
   '.'
 ];
 
-specialCharacters = specialCharacters.join("");
-console.log(specialCharacters);
-
-/*
+console.log(specialCharacters.join(""));
 
 var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
+console.log(numericCharacters.join(""));
 
 var lowerCasedCharacters = [
   'a',
@@ -172,6 +184,7 @@ var lowerCasedCharacters = [
   'z'
 ];
 
+console.log(lowerCasedCharacters.join(""));
 
 var upperCasedCharacters = [
   'A',
@@ -202,8 +215,9 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+console.log(upperCasedCharacters.join(""));
 
-
+/*
 // Function to prompt user for password options
 function getPasswordOptions() {
 
@@ -224,10 +238,10 @@ var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
-var password = generatePassword();
-var passwordText = document.querySelector('#password');
+  var password = generatePassword();
+  var passwordText = document.querySelector('#password');
 
-passwordText.value = password;
+  passwordText.value = password;
 }
 
 // Add event listener to generate button
