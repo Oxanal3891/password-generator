@@ -1,52 +1,114 @@
+
+//Intro alert//
+
 alert('Thank you for choosing our random password generator service!\nFor your security, we recomment that you choose a password which:\n1) is minimum 8 characters long,\n2) consists of a mixture of lower and case characters, and numbers, \n3) includes special characters.\nChoose your password parameters>>')
 
-var passwordLength = prompt('How long do you want your password to be? Enter a number between 8 and 128.');
+//Declare user choice object and a prompts object
 
-while (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) { passwordLength = prompt('Invalid entry. Enter a number between 8 and 128.') };
+let userChoices = [];
 
-console.log(passwordLength)
+const prompts = [
+  "Please enter the length of your password. It must be between 8 and 128 characters long",
+  "Do you want to include lower case characters?",
+  "Do you want to include upper case characters?",
+  "Do you want to include numeric characters?",
+  "Do you want to include special characters?"
+];
 
-var characters = [lowerCase, upperCase, numericCharacters, specialCharacters]
 
-  /
-while (!characters.includes(true)) {
-  var lowerCase = confirm("Do you want to include lower case characters?")
-  var upperCase = confirm("Do you want to include upper case characters?")
-  var numericCharacters = confirm("Do you want to include numeric characters?")
-  var specialCharacters = confirm("Do you want to include special characters?")
+//Password length prompt and validation
+
+while (true) {
+  let length = prompt(prompts[0]);
+  if (length >= 8 && length <= 128 && !isNaN(length)) { break; }
 };
 
 
+
+
+//Special character validation
+
 /*
-for (; ;) {
-  var characters = [lowerCase, upperCase, numericCharacters, specialCharacters];
-  var lowerCase = confirm("Do you want to include lower case characters?");
-  var upperCase = confirm("Do you want to include upper case characters?");
-  var numericCharacters = confirm("Do you want to include numeric characters?");
-  var specialCharacters = confirm("Do you want to include special characters?");
-  if (!characters.includes(true)) {
-
-    alert('Select at least 1 type of characters'),
-    lowerCase = confirm("Do you want to include lower case characters?")
+var char = [];
+ 
+do {
+  for (i = 1; i < prompts.length; i++) {
+    char.push(confirm(prompts[i]));
+    userChoices.splice(1, 4, char);
+    break;
   }
-  else if (lowerCase) { upperCase = confirm("Do you want to include upper case characters?") }
-  else if 
-{ numericCharacters = confirm("Do you want to include numeric characters?") }
-else if 
-  specialCharacters = confirm("Do you want to include special characters?")
-
-
-    ;
-} else if () { } else {
-  valid = true;
+}
+while (!userChoices.includes(true))
+ 
+//userChoices.fill(x,1,5)
+ 
+//userChoices.splice(1, 4, input)
+ 
+ 
+ 
+ 
+ 
+/*
+prompt(prompts[0]);
+if (long > 8 && long < 128 && !isNaN(long)) { userChoices.long = long; break; }
+else { alert('Invalid entry. Enter a number between 8 and 128.') }
+};
+ 
+ 
+function askPrompts() {
+for (i = 0; i < promptArr.length; i++) {
+ var k = confirm(promptArr[i]);
+ values.push(k);
+ break;
 }
 }
+ 
+while (!values.includes(true)) {
+askPrompts()
+}
+}
+ 
+console.log(values)
+/*
+do {
+alert("You need to choose at least type of characters. Please make your character choices again")
+}
+while (!values.includes(true));
+ 
+/*
+for (var t = 0; t < promptArr.length; t++) {
+var k = prompt(promptArr[t]);
+if (k == null) {
+ break;
+}
+else {
+ values.push(k);
+}
+}
+* /
+ 
+ 
+ 
+ 
+ 
+for (i = 0; i < promptArr.length; i++) {
+var k = confirm(promptArr[i]);
+values.push(k);
+if (promptArr.includes(true)) {
+ values.push(k);
+}
+else {
+ alert('Select at least 1 type of characters');
+ values.push(k);
+}
+}
+ 
+if (!valid) {keep going through loop }
+
+*/
 
 
 
-
-
-// Array of special characters to be included in password
 var specialCharacters = [
   '@',
   '%',
@@ -73,10 +135,14 @@ var specialCharacters = [
   '.'
 ];
 
-// Array of numeric characters to be included in password
+specialCharacters = specialCharacters.join("");
+console.log(specialCharacters);
+
+/*
+
 var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
-// Array of lowercase characters to be included in password
+
 var lowerCasedCharacters = [
   'a',
   'b',
@@ -106,7 +172,7 @@ var lowerCasedCharacters = [
   'z'
 ];
 
-// Array of uppercase characters to be included in password
+
 var upperCasedCharacters = [
   'A',
   'B',
@@ -136,6 +202,8 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+
+
 // Function to prompt user for password options
 function getPasswordOptions() {
 
@@ -156,13 +224,13 @@ var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector('#password');
+var password = generatePassword();
+var passwordText = document.querySelector('#password');
 
-  passwordText.value = password;
+passwordText.value = password;
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
 
-* /
+*/
