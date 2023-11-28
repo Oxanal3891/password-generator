@@ -14,16 +14,14 @@ const prompts = [
   "Do you want to include numeric characters?",
   "Do you want to include special characters?"
 ];
-//Declare a character options object by joining various character arrays ()
 
-const charOptions = {
-  specialChar: "@%+\/'!#$^?:,)(}{][~-_.",
-  lowerCasedChar:
-}
+//Declare a variable for a number of character types
 
-//Declare password choices 
+let charTypeNumber = "";
 
-let passwordChoices = "";
+//Declare an array of randomly selected characters:
+
+let characters = [];
 
 //Password length prompt and validation
 
@@ -35,92 +33,31 @@ while (true) {
 
 
 
-//Characters prompts and validation
+//Characters prompts, adding to the number of character types and selecting random characters
 
-let specialCharChoice = prompt(prompt[1]);
-if (specialCharChoice) { }
+let lowerCharChoice = prompt(prompt[1]);
+if (lowerCharChoice) {
+  charTypeNumber += lowerCasedCharacters;
+  characters.push(getRandom(lowerCasedCharacters))
+}
 
+let upperCharChoice = prompt(prompt[2]);
+if (upperCharChoice) {
+  charTypeNumber += upperCasedCharacters;
+  characters.push(getRandom(upperCasedCharacters))
+}
 
+let numberChoice = prompt(prompt[3]);
+if (numberChoice) {
+  charTypeNumber += numericCharacters;
+  characters.push(getRandom(numericCharacters))
+}
 
-/*
-var char = [];
- 
-do {
-  for (i = 1; i < prompts.length; i++) {
-    char.push(confirm(prompts[i]));
-    userChoices.splice(1, 4, char);
-    break;
-  }
+let specialCharChoice = prompt(prompt[4]);
+if (specialCharChoice) {
+  charTypeNumber += specialCharacters;
+  characters.push(getRandom(specialCharacters))
 }
-while (!userChoices.includes(true))
- 
-//userChoices.fill(x,1,5)
- 
-//userChoices.splice(1, 4, input)
- 
- 
- 
- 
- 
-/*
-prompt(prompts[0]);
-if (long > 8 && long < 128 && !isNaN(long)) { userChoices.long = long; break; }
-else { alert('Invalid entry. Enter a number between 8 and 128.') }
-};
- 
- 
-function askPrompts() {
-for (i = 0; i < promptArr.length; i++) {
- var k = confirm(promptArr[i]);
- values.push(k);
- break;
-}
-}
- 
-while (!values.includes(true)) {
-askPrompts()
-}
-}
- 
-console.log(values)
-/*
-do {
-alert("You need to choose at least type of characters. Please make your character choices again")
-}
-while (!values.includes(true));
- 
-/*
-for (var t = 0; t < promptArr.length; t++) {
-var k = prompt(promptArr[t]);
-if (k == null) {
- break;
-}
-else {
- values.push(k);
-}
-}
-* /
- 
- 
- 
- 
- 
-for (i = 0; i < promptArr.length; i++) {
-var k = confirm(promptArr[i]);
-values.push(k);
-if (promptArr.includes(true)) {
- values.push(k);
-}
-else {
- alert('Select at least 1 type of characters');
- values.push(k);
-}
-}
- 
-if (!valid) {keep going through loop }
-
-*/
-
 
 
 var specialCharacters = [
@@ -149,11 +86,7 @@ var specialCharacters = [
   '.'
 ];
 
-console.log(specialCharacters.join(""));
-
 var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-
-console.log(numericCharacters.join(""));
 
 var lowerCasedCharacters = [
   'a',
@@ -184,8 +117,6 @@ var lowerCasedCharacters = [
   'z'
 ];
 
-console.log(lowerCasedCharacters.join(""));
-
 var upperCasedCharacters = [
   'A',
   'B',
@@ -215,19 +146,30 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+Created strings for all the character arrays to populate the charOptions object
+
 console.log(upperCasedCharacters.join(""));
+console.log(specialCharacters.join(""));
+console.log(numericCharacters.join(""));
+console.log(lowerCasedCharacters.join(""));
 
 /*
 // Function to prompt user for password options
 function getPasswordOptions() {
 
 }
+*/
 
-// Function for getting a random element from an array
+//Function for getting a random element from an array
+
 function getRandom(arr) {
+  let randomIndex = Math.floor(Math.random() * arr.length);
+  let item = arr[randomIndex];
 
+  return item;
 }
 
+/*
 // Function to generate password with user input
 function generatePassword() {
 
